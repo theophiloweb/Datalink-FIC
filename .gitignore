@@ -3,3 +3,4 @@ json/
 .env
 .vscode/
 __pycache__/
+relatorio.docx
