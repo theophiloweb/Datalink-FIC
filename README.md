@@ -10,6 +10,17 @@
 
 O Darklink FIC é um sistema de automação em Python que utiliza inteligência artificial para fiscalizar o desempenho de contratos de serviços de rede. A solução integra dados do Zabbix, API de Transparência e Google Gemini para gerar relatórios detalhados com análises e possíveis sanções. 
 
+# Simulação da Análise com IA
+
+Para fins de demonstração e validação do sistema, a análise com Inteligência Artificial (IA), que normalmente ocorreria ao final do processo de coleta de dados, foi simulada nesta versão.
+
+Em vez de executar todo o processo de coleta de dados (requerendo acesso à API do Zabbix, API da Transparência, bibliotecas do Python, etc.), o texto a ser analisado pela IA foi definido diretamente no início do arquivo `Main.py`, juntamente com a criação de variáveis com valores fictícios.
+
+Essa abordagem permite verificar a funcionalidade da IA e a geração da análise sem a necessidade de percorrer todo o fluxo do sistema. É importante destacar que essa é uma solução temporária para fins didáticos e de desenvolvimento.
+
+Em um ambiente de produção, o sistema completo seria executado, incluindo a coleta de dados reais e a análise final pela IA.
+
+
 ## Funcionalidades
 
 * **Coleta automatizada de indicadores de rede:** Latência, Jitter, Perda de Pacotes e Disponibilidade via Zabbix API.
