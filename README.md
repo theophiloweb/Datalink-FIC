@@ -49,7 +49,7 @@ A classe `Item.py` é crucial para a interação com o Zabbix. Ela exibe os iten
 * **Triggers do Zabbix:** Assegure que as triggers no Zabbix estejam configuradas corretamente para disparar alertas e coletar os dados relevantes.
 
 ## Vídeo de apresentação e uso do Sistema
-Youtube - [Teophilo Silva](www.linkedin.com/in/teophilo-silva-dev) 
+Youtube - [Teophilo Silva](https://www.youtube.com/watch?v=RCdPwnyE4WA) 
 
 ## Próximos Passos
 
