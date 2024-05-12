@@ -62,6 +62,119 @@ load_dotenv()  # Iniciar DntEnv
 ia = IAInteraction()
 ia.start_chat()
 
+
+
+#****************************************************************************************************************************************
+# Caratér Didático de funcionamento esperado do Sistema com IA
+
+#Varíaveis a serem analisadas pela IA
+config_contract['unidadeGestora_nome'] = 'DataLink Automações em Python'
+config_variables['selected']  = 'Enlace de Dados'
+config_contract['numero'].lstrip('0') = 112021
+config_contract['fornecedor_nome'] = 'Provedor de Enlaces'
+user_db[5] = 'Analista de Sistemas'
+user_db[2] = 'Pedrinho da Silva'
+contract_details[0]['descComplementarItemCompra'] = 'Enlace de Dados de 32 Mb/S que liga as cidades de Mogi das Cruzes a São Paulo'
+datetime.strptime(config_contract['dataFimVigencia'] = '2021-01-11'
+config_variables['latencyOccurrencesPercentille95'] = 417
+config_variables['dateStart'] = '01/02/2024'
+config_variables['dateEnd'] = '29/02/2024'
+index_contract = 99
+config_variables['latency'] = 0.86
+provider_indicators[0] = 10
+config_variables['jitter'] = 10
+provider_indicators[1] = 10
+config_variables['resultPacketLoss'] = 2.50
+provider_indicators[2] = 2
+config_variables['percentage_availability'] = 96.70
+provider_indicators[3] = 97
+
+text = f"""
+
+     ***Atuação: Aja como um analista especialista em redes de dados. Sua análise é minuciosa e direta. Você não toma partido quando se trata de fiscalização técnica de contratos. Sua ênfase sempre será levar em consideração as melhores práticas, bom uso dos recursos públicos e um enlace disponível e que cumpre com eficácia, até certo, sua finalidade, dentro do período considerado.
+     
+     **Pergunta: Os indicadores da empresa contratada foram superiores ao da contratante com pouco diferença.
+     **Resposta: Além das análises abaixo se adiciona a conclusão que os indicadores da empresa será utilizados para fins de glosa.
+
+
+     **Pergunta:
+
+     ## Análise de Indicadores de Desempenho de Enlace
+
+     **Unidade Gestora:** {config_contract['unidadeGestora_nome']}
+     **Enlace:** {config_variables['selected']} ({config_contract['numero'].lstrip('0')})
+     **Fornecedor:** {config_contract['fornecedor_nome']}
+     **Fiscal técnico de contrato atual:** {user_db[5]} {user_db[2]}
+     **Objeto do Contrato:** {contract_details[0]['descComplementarItemCompra']}
+     **Data prevista para término do Contrato:** {datetime.strptime(config_contract['dataFimVigencia'], '%Y-%m-%d').strftime('%d/%m/%Y')}
+     **Quantidade de ocorrências de Percentille95** {config_variables['latencyOccurrencesPercentille95']}
+     **Velocidade do Enlace** {config_variables['latencyOccurrencesPercentille95']} MB
+     **Data inicial para coleta no Zabbix** {config_variables['dateStart']}
+     **Data final para coleta no Zabbix** {config_variables['dateEnd']}
+     
+
+     Este relatório apresenta uma análise dos indicadores de desempenho do enlace, comparando os dados coletados pelo Zabbix do 52º Centro de Telemática com os indicadores fornecidos pelo provedor. O objetivo é identificar possíveis problemas de desempenho e recomendar ações corretivas.
+
+     **Metodologia:**
+
+     * **Latência:** A latência é medida em milissegundos (ms) e calculada usando a fórmula L = RTT / 2, onde RTT é o tempo de ida e volta. O percentil 95 das medições de latência é utilizado para avaliação. 
+     * **Jitter:** O jitter representa a variação no tempo de atraso dos pacotes e é calculado como J = P95(Ln) - Lmin, onde P95(Ln) é o percentil 95 da latência e Lmin é a menor latência observada.
+     * **Perda de Pacotes:** A perda de pacotes é medida como uma porcentagem do total de pacotes enviados que não chegaram ao destino. A fórmula utilizada é TPP = ((NPorigem - NPdestino) / NPorigem) * 100.
+     * **Disponibilidade:** A disponibilidade é a porcentagem de tempo em que o serviço esteve operacional durante o período de análise. A fórmula utilizada é D = ((To - Ti) / To) * 100, onde To é o tempo total de operação e Ti é o tempo de indisponibilidade.
+
+     **Limiares Contratuais:**
+
+     | Indicador | Limiar |
+     |---|---|
+     | Latência (P95) | 150ms |
+     | Jitter | <= 30ms |
+     | Perda de Pacotes | <= 1% |
+     | Disponibilidade | {index_contract} |
+
+     **Resultados:**
+
+     | Indicador | Zabbix | Provedor |
+     |---|---|---|
+     | Latência (P95) | {config_variables['latency']}ms | {provider_indicators[0]}ms |
+     | Jitter | {config_variables['jitter']}ms | {provider_indicators[1]}ms |
+     | Perda de Pacotes | {config_variables['resultPacketLoss']}% | {provider_indicators[2]}% |
+     | Disponibilidade | {round(config_variables['percentage_availability'],2)}% | {provider_indicators[3]}% |
+
+     **Análise e Recomendações:**
+
+     * ** Sempre se dirija ao fiscal técnico de contrato atual.
+
+     * **Comparação dos Dados:** Compare os resultados do Zabbix com os dados do provedor para cada indicador usando tabela formatada e legível. Não entre no mérito se existe erros nas medições, leve sempre pelo lado que ambos os lados realizaram suas medições e em príncipio está certos para cada um dos lados, sua análise será sobre os valores apurados e suas consequências para mabos os lados no que se refere a possíveis sanções e melhorias nos enlaces. Atue como especialista em redes de dados para tomar a orientações acertadas para mabos os lados. Cite a quantidade de ocorrências de percentille95 detectadas e sua aplicação no contrato se for o caso. Identifique discrepâncias significativas que possam indicar problemas de medição ou desempenho real da rede.
+     * **Análise de Impacto:** Explique as potenciais consequências de exceder os limites contratuais para os indicadores que utrapassaram o limiar, e cite aqueles que mantiveram a meta, como degradação da qualidade de áudio e vídeo em videoconferências, lentidão na transmissão de dados e interrupções no serviço. Faça também uma análise sobre a distancia que engloba esse Enlace no item Objeto do Contrato, pois dependendo da cidade e distância poderá haver problemas de comunicação e interferência nos indicadores.
+     * **Importância Estratégica:** Enfatize a importância do enlace para as operações da unidade militar, considerando sua função de telemática e as conexões com outras unidades. Faça também uma análise se a velocidade contrata no item em Velocidade do Enlace é viável para operação do link.
+     * **Recomendações:** Com base na análise, sugira medidas corretivas que beneficiem o provedor, a menos que haja uma diferença substancial entre os dados, caso em que se deve optar pelo cenário mais favorável ao desempenho do enlace.
+
+     **Observações:**
+
+     * Descontos serão aplicados para cada ocorrência de P95(Ln) acima do limite de latência e jitter, e para cada 2% ou fração acima do limite de perda de pacotes.
+     * Se todos os indicadores estiverem dentro dos limites contratuais, parabenize o provedor pelo cumprimento das metas. 
+     * Exiba o percentual de recomendação dessa empresa contratada baseado no reclame aqui. Exiba somente o percentual de recomendação no formato: Empresa recomendada: Percentual capturado do site reclame aqui até a dataque você possui acesso.
+     * É possível que os dados da contratante e contratada referente aos indicadores possam está discrepantes, se o resultado foi muito maior na comparação, devido a uso de sistemas de medição diferentes.  
+     * Cite também o período de coleta e tempo de ralização em minutos.
+
+     **Apresentação dos Resultados:**
+
+     Os resultados da análise e as recomendações devem ser apresentados em um formato claro e conciso, utilizando sempre que possível tabelas e fontes legíveis para usuário. 
+
+     **Objetivo:**
+
+     O objetivo desta análise é auxiliar na garantia da qualidade do serviço de enlace, identificando e corrigindo problemas de desempenho que possam afetar as operações da unidade militar.
+
+     ***resposta:
+"""
+
+response = ia.send_message(text)
+print(f"IA: {response}")
+
+sys.exit() # Fecho aqui pois adiante é necessário ter DB configurado
+
+#****************************************************************************************************************************************
+
 #Variáveis Gobais que estão dentro de escopo if/else
 result_gloss_availability = None
 gloss_availability_numeric = None
@@ -344,13 +457,19 @@ text = f"""
 response = ia.send_message(text)
 print(f"IA: {response}")
 
-sys.exit()
-
 print("Agora vou gerar o relatório...")
 
-
-
 write_report_data(config_contract['numero'].lstrip('0'),config_variables['dateStart'], contract_details[0]['descComplementarItemCompra'],config_contract['unidadeGestora_nome'], config_contract['fornecedor_nome'], config_contract['fornecedor_cnpjFormatado'],index_contract,round(config_variables['percentage_availability'],2), config_variables['resultPacketLoss'],config_variables['latency'],config_variables['jitter'], provider_indicators[3],provider_indicators[1],provider_indicators[0],provider_indicators[1],incidence,incidence_pct_loss, incidence_latency,incidence_jitter, gloss_availability_numeric, gloss_pct_numeric, gloss_latency_numeric, gloss_jitter_numeric, round(float(config_contract['valorFinalCompra']) / 12, 2), result_gloss_availability, result_gloss_latency, result_gloss_jitter, result_gloss_pct, user_db[2],user_db[5])
+
+
+
+
+ 
+              
+
+
+
+
 
 
 
